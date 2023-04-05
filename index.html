@@ -33,7 +33,7 @@
             let button = document.getElementById(`button${num}`);
             button.style.display = 'none';
             cell.innerHTML += `<img onclick = "back(${num}, '${name}')" id = 'dp${num}' class='dpimg' src='img/${name}.png' />`;
-            for (let i = 0; i <= icon.length; i++) {
+            for (let i = 0; i < icon.length; i++) {
                 icon[i].style.visibility = "hidden";
             }
         }
@@ -43,7 +43,7 @@
             let icon = document.getElementsByClassName(`${name}`);
             button.style.display = 'block';
             delimg.remove();
-            for (let i = 0; i <= icon.length; i++) {
+            for (let i = 0; i < icon.length; i++) {
                 icon[i].style.visibility = "visible";
             }
 
