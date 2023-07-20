@@ -27,6 +27,7 @@
         }
     </style>
     <script>
+
         function putimg(num, name) {
             let cell = document.getElementById(num);
             let icon = document.getElementsByClassName(`${name}`);
@@ -76,7 +77,6 @@
         }
         function resetall() {
             let table = document.getElementById("table");
-
             table.innerHTML = `
             <tr>
                 <td id="7" class="td">
@@ -416,13 +416,13 @@
                         </tr>
                     </table>
                 </td>
-            </tr>`
+            </tr>`;
+            darkMode();
         }
         window.onload = function () {
             resetall();
+            document.getElementById('switch').addEventListener('change', darkMode);
         }
-        
-        
     </script>
     <table id="table" border="1">
     </table>
@@ -431,9 +431,5 @@
         <button id='reset' onclick="resetall()">초기화</button><input type="checkbox" id="switch">다크모드</input>
         <p>made by info</p>
     </div>
-    
 </body>
-<script>
-    document.getElementById('switch').addEventListener('change', darkMode);
-</script>
 </html>
