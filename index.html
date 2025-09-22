@@ -28,7 +28,18 @@
         }
     </style>
     <script>
-
+        if (localStorage.getItem('darkModeChecked') !== null) {
+            document.addEventListener('DOMContentLoaded', function() {
+                const switchElem = document.getElementById('switch');
+                switchElem.checked = localStorage.getItem('darkModeChecked') === 'true';
+            });
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const switchElem = document.getElementById('switch');
+            switchElem.addEventListener('change', function() {
+                localStorage.setItem('darkModeChecked', switchElem.checked);
+            });
+        });
         function putimg(num, name) {
             let cell = document.getElementById(num);
             let icon = document.getElementsByClassName(`${name}`);
